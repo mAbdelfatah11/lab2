@@ -5,7 +5,7 @@ on:
     inputs: # press ctrl + space to show available directives
       run_job:
         description: Run Specific Job
-        required: false  # it is not required 
+        required: false  # it is not required to be configured while run
         type: boolean
       custom_message:
         type: string
@@ -24,3 +24,7 @@ jobs:
     - name: Printing Custom Message
       run: |
         echo ${{ inputs.custom_message }}
+    - name: Printing run-job boolean value
+      if: ${{ inputs.run_job == true }}
+      run: |
+        echo ${{ inputs.run_job }}
