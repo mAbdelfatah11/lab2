@@ -25,6 +25,6 @@ jobs:
       run: |
         echo ${{ inputs.custom_message }}
     - name: Printing run-job boolean value
-      if: ${{ inputs.run_job == 'true' }}
+      if: ${{ inputs.run_job == true }}   ## 'true' is considered to be string not boolean so evaulates to false in condition as true not equal 'true'
       run: |
         echo ${{ inputs.run_job }}
