@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs: # press ctrl + space to show available directives
       run_job:
-        type: boolean
         description: Run Specific Job
-        required: false
+        required: false  # it is not required 
+        type: boolean
       custom_message:
         type: string
         description: Enter a custom message
